@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+class rec {
+ private:
+
+     float width;
+     float length;
+public:
+  void setlength(float l){
+      if (l >= 0)
+	     length = l;
+      else 
+	     cout << "plese enter correct number" << endl;
+   }
+  void setwidth(float w){
+      if (w >= 0) 
+	     width = w;
+	  else 	       
+        cout << "plese enter correct number" << endl; 
+ 	
+   }    
+  float getlength(){
+      return length; 
+   }
+
+  float getwidth(){
+      return width; 
+   }
+  float getarea(){
+      return width * length;
+
+   }
+};
+
+int main() {
+	rec box;
+    box.setlength(12.5);
+    box.setwidth(10);
+	cout << box.getarea();
+   return 0;
+}
