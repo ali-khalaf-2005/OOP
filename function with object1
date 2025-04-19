@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+class Sample {
+     private:
+       string name;
+       int mark;
+     public:
+       Sample(string n, int m)
+        {
+          name = n;
+          mark= m;
+        } 
+    void sum (Sample ob1 , Sample ob2)
+        {
+          cout << ob1.mark+ob2.mark << endl;
+        }
+
+   };
+
+
+int main() {
+   Sample ob1("ali", 100);
+   Sample ob2("ahmed", 200);
+
+   ob2.sum(ob1,ob2);
+
+   return 0;
+}
+
+
