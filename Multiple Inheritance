@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+class Sample {
+     private:
+       int age;
+       string name;
+
+     public:
+       void setsample(int a, string n)
+          {
+            age = a;
+            name = n; 
+          }
+      void getsample(){
+            cout << "you name is : " << name << endl << " your age : " << age ;
+        }
+   };
+  class Person {
+      private :
+        int id;
+        string last_name;
+      public : 
+      void setperson(int i, string l)
+      {
+        id = 1;
+        last_name = l; 
+      }
+  void getperson(){
+        cout << "you id is : " << id << endl << "your  last name : " << last_name ;
+    }    
+   };
+    class Student : public Sample , public Person {
+      private :
+        int degre ;
+        string tucher;
+      public :
+      void setstudent(int d, string t)
+      {
+        degre = d;
+        tucher = t; 
+      }
+  void getstudent(){
+        cout << "you degre is : " << degre << endl << "your tucher is : " << tucher ;
+      }    
+    };
+
+int main() {
+   Student ob1;
+    ob1.setsample(20, "ali");
+    ob1.getsample();
+ 
+
+   return 0;
+}
