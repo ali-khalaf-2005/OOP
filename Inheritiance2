@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+ 
+class A {
+   private :
+      string name;
+      int age;
+   public :
+      A( string n, int a)
+        { 
+           name = n;
+           age = a;
+        }
+      void print1(){
+           cout << "your name is : " << name <<endl << "your age is :" << age << endl; 
+        }    
+};
+
+class B {
+    private :
+      string email;
+    public :
+      B (string e)
+        {
+            email = e;
+        }
+      void print2(){
+           cout << "your email is : " << email << endl;
+        }  
+};
+
+class C : public A, public B {
+    private :
+       int dagre;
+    public :
+       C (string n, int a, string e, int d) : A(n,a) , B(e)
+       {
+           dagre = d;
+       }
+     void print3()
+       {
+        cout << "your dagre is : " << dagre << endl;
+       }          
+};
+
+int main (){
+    A ob1("ali ", 20);
+    B ob2("lykhlf020@jmail.com");  
+    C ob3("ali ", 20, "lykhlf020@jmail.com", 90);
+
+ob1.print1();
+cout << " ==========================================" << endl;
+ob2.print2();
+cout << " ==========================================" << endl;
+ ob3.print1();
+ ob3.print2();
+ ob3.print3();
+
+    return 0;
+}
