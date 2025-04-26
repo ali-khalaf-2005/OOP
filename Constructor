@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+ 
+class A {
+  public:
+    A (int a)
+      {
+        cout << "a from class A = ==== > " << a << endl;
+      }    
+};
+  class B : public A
+    {  
+      public :
+        B (int a, int b) : A(a) // mean it is value of (a) will be for constructor a
+            {
+               cout << "b from class B = ==== > " << b << endl;
+            }
+    };
+int main (){
+
+     B ob1(4 , 5); // value of a then value of b
+       
+    return 0;
+} 
