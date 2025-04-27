@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+ class Person 
+ {
+    private:
+       string name ;
+       int age;
+    public:
+       Person(string n, int a)
+        {
+           name = n;
+           age = a;
+        }
+          void print()
+            {
+              cout << "your  name is : " << name << endl << "your age is : " << age << endl;
+            }  
+  };
+
+  class Empolyee : public Person
+  {
+    private:
+       int id;
+       int salary;
+    public:
+       Empolyee(string n, int a,int i, int s) : Person(n , a)
+        {
+           id = i;
+           salary = s;
+        }
+          void print()
+           {
+            cout << "your id is : " << id << endl << "your salary is  : " << salary << endl; 
+           }         
+  };
+
+  class Student : public Empolyee 
+  {
+    private:
+       string email;
+    public:
+       Student(string n, int a,int i, int s, string e) : Empolyee(n, a, i, s)
+        {
+          email = e;
+        }
+        void print()
+          {
+            Person::print();
+            Empolyee::print();
+            cout << "your email is : " << email << endl; 
+          }         
+  };
+
+
+int main(){
+   Student ob1("ali", 20, 1254125, 10000, "ali@gmail.com");
+    ob1.print();
+  return 0;
+}
